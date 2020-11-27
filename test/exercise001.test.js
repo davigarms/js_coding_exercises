@@ -18,7 +18,7 @@ describe("capitalize", () => {
     expect(capitalize("oh no, bears!!!")).toBe("Oh no, bears!!!");
   });
 
-  test("does nothing if the string is already capitalized", () => {
+  test.only("does nothing if the string is already capitalized", () => {
     expect(capitalize("Hello")).toBe("Hello");
   });
 });
