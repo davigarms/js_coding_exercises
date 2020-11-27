@@ -141,7 +141,7 @@ describe("duplicateNumbers", () => {
 
     arr1 = [6, 4, 2, 4, 1, 9];
     arr2 = [1];
-    expect(duplicateNumbers(arr1, arr2)).toEqual([1]);
+    expect(duplicateNumbers(arr1, arr2)).toEqual([1, 4]);
   });
 
   test("returns the duplicate numbers in ascending order", () => {

@@ -38,6 +38,9 @@ function duplicateNumbers(arr1, arr2) {
   if (arr1 === undefined) throw new Error("arr1 is required");
   if (arr2 === undefined) throw new Error("arr2 is required");
   // Your code here!
+  var concatArr = arr1.concat(arr2);
+  var repeatedArr = concatArr.filter ((item, index) => concatArr.indexOf(item) !== index).sort();
+  return(repeatedArr.filter ((item, index) => repeatedArr.indexOf(item) === index));
 }
 
 module.exports = {
