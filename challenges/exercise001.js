@@ -1,12 +1,13 @@
 function capitalize(word) {
   if (word === undefined) throw new Error("word is required");
+  if (word.substring(0,1) == word.substring(0,1).toUpperCase()) return word;
+  // return word.substring(0,1).toUpperCase() + word.substring(1);
   // Add your code here!
 }
 
 function generateInitials(firstName, lastName) {
   if (firstName === undefined) throw new Error("firstName is required");
   if (lastName === undefined) throw new Error("lastName is required");
-  // Add your code here!
 }
 
 function addVAT(originalPrice, vatRate) {
