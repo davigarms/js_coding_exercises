@@ -1,20 +1,22 @@
 function capitalize(word) {
   if (word === undefined) throw new Error("word is required");
-  if (word.substring(0,1) == word.substring(0,1).toUpperCase()) return word;
-  // return word.substring(0,1).toUpperCase() + word.substring(1);
   // Add your code here!
+  if (word.substring(0,1) == word.substring(0,1).toUpperCase()) return word;
+  return word.substring(0,1).toUpperCase() + word.substring(1);
 }
 
 function generateInitials(firstName, lastName) {
   if (firstName === undefined) throw new Error("firstName is required");
   if (lastName === undefined) throw new Error("lastName is required");
+  // Add your code here!
   return firstName.substring(0,1) + "." + lastName.substring(0,1);
 }
 
 function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
-  if (vatRate === undefined) throw new Error("vatRate is required");
   // Add your code here!
+  if (vatRate === undefined) throw new Error("vatRate is required");
+  return Number((originalPrice + originalPrice * vatRate / 100).toFixed(2));
 }
 
 function getSalePrice(originalPrice, reduction) {
