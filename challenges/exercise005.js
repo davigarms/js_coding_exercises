@@ -9,6 +9,9 @@ const findNextNumber = (nums, n) => {
 const count1sand0s = str => {
   if (str === undefined) throw new Error("str is required");
   // Your code here!
+  var total0s = str.split("").sort((a, b) => a - b).filter(item => item == 0);
+  var total1s = str.split("").sort((a, b) => a - b).filter(item => item == 1);
+  return ({"0": total0s.length, "1": total1s.length});
 };
 
 const reverseNumber = n => {
