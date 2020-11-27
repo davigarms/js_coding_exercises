@@ -8,13 +8,13 @@ function findNamesBeginningWith(names, char) {
   if (!names) throw new Error("names is required");
   if (!char) throw new Error("char is required");
   // Your code here
-  
-  return names.filter(name => name.substr(0,1) == char)
+  return names.filter(name => name.substr(0,1) == char);
 }
 
 function findVerbs(words) {
   if (!words) throw new Error("words is required");
   // Your code here
+  return words.filter(word => word.substr(0,3) == "to ");
 }
 
 function getIntegers(nums) {
