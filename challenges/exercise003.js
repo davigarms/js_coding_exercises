@@ -18,13 +18,20 @@ function camelCaseWords(words) {
 function getTotalSubjects(people) {
   if (people === undefined) throw new Error("people is required");
   // Your code here!
-  return(people.map(item => item.subjects).reduce((p,n) => p.concat(n),[]).length);
+  var subjects = people.map(item => item.subjects);
+  var subjectsArr = subjects.reduce((p,n) => p.concat(n),[]);
+  return(subjectsArr.length);
 }
 
 function checkIngredients(menu, ingredient) {
   if (menu === undefined) throw new Error("menu is required");
   if (!ingredient) throw new Error("ingredient is required");
+  
   // Your code here!
+  var ingredients = menu.map(item => item.ingredients);
+  var ingredientsArr = ingredients.reduce((p,n) => p.concat(n),[]);
+  if (ingredientsArr.indexOf(ingredient) > -1) return true;
+  return false;
 }
 
 function duplicateNumbers(arr1, arr2) {
