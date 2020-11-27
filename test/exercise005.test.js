@@ -69,7 +69,7 @@ describe("sumArrays", () => {
 });
 
 describe("arrShift", () => {
-  test("returns an array with the first and last items swapped", () => {
+  test.only("returns an array with the first and last items swapped", () => {
     expect(arrShift([1, 2])).toEqual([2, 1]);
     expect(arrShift([1, 2, 3])).toEqual([3, 2, 1]);
     expect(arrShift([1, 2, 3, 4])).toEqual([4, 2, 3, 1]);
