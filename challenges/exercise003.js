@@ -17,8 +17,9 @@ function camelCaseWords(words) {
 
 function getTotalSubjects(people) {
   if (people === undefined) throw new Error("people is required");
-  var peopleWithSubjects =  people.filter(item => item.subjects.length > 0);
-  var subjects = peopleWithSubjects.map(item => item.subjects);
+  // Your code here!
+  // var peopleWithSubjects =  people.filter(item => item.subjects.length > 0);
+  var subjects = people.map(item => item.subjects);
   var subjectsArr = subjects.reduce((p,n) => p.concat(n),[]);
   var uniqueSubjects = subjectsArr.filter ((item, index) => subjectsArr.indexOf(item) === index);
   return(subjectsArr.length);
@@ -28,6 +29,7 @@ function checkIngredients(menu, ingredient) {
   if (menu === undefined) throw new Error("menu is required");
   if (!ingredient) throw new Error("ingredient is required");
   // Your code here!
+
 }
 
 function duplicateNumbers(arr1, arr2) {
