@@ -26,8 +26,7 @@ function checkIngredients(menu, ingredient) {
   
   var ingredients = menu.map(item => item.ingredients);
   var ingredientsArr = ingredients.reduce((p,n) => p.concat(n),[]);
-  if (ingredientsArr.indexOf(ingredient) > -1) return true;
-  return false;
+  return ingredientsArr.indexOf(ingredient) > -1;
 }
 
 function duplicateNumbers(arr1, arr2) {
