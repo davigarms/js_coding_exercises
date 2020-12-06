@@ -4,7 +4,6 @@ const {
 
 describe("capitalize", () => {
     test("returns a capitalized string", () => {
-        expect(tvRemote("does")).toBe(16);
-        expect(tvRemote("Does")).toBe(40);
+        expect(tvRemote("d")).toBe(4);
     })
 });
