@@ -1,8 +1,9 @@
 const tvRemote = function(word) {
-    let presses = 0;
-    presses += word.length;
+    let buttonPresses = 0;
 
     let initialPos = [0, 0];
+
+    let chars = word.split("");
 
     const keyboard = [
         ['a', 'b', 'c', 'd', 'e', '1', '2', '3'], 
@@ -12,15 +13,19 @@ const tvRemote = function(word) {
         ['u', 'v', 'w', 'x', 'y', 'z', '_', '/']
       ];
 
-      let row = keyboard.findIndex(row => row.indexOf(word) > -1);
-      let col = keyboard[row].indexOf(word);
+      chars.forEach(char => {
+        let row = keyboard.findIndex(row => row.indexOf(char) > -1);
+        let col = keyboard[row].indexOf(char);
 
-      let colDiff = Math.abs(col - initialPos[1]);
-      let rowDiff = Math.abs(row - initialPos[0]);
+        let colDiff = Math.abs(col - initialPos[0]);
+        let rowDiff = Math.abs(row - initialPos[1]);
 
-      presses += rowDiff + colDiff; 
+        buttonPresses += rowDiff + colDiff + 1; //Add Ok Button
+                    
+        initialPos = [col, row];
+      });
 
-      return (presses)
+      return buttonPresses;
 }
 
 module.exports = {
