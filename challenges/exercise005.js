@@ -7,8 +7,8 @@ const findNextNumber = (nums, n) => {
 
 const count1sand0s = str => {
   if (str === undefined) throw new Error("str is required");
-  var total0s = str.split("").sort((a, b) => a - b).filter(item => item == 0);
-  var total1s = str.split("").sort((a, b) => a - b).filter(item => item == 1);
+  const total0s = str.split("").sort((a, b) => a - b).filter(item => item == 0);
+  const total1s = str.split("").sort((a, b) => a - b).filter(item => item == 1);
   return ({"0": total0s.length, "1": total1s.length});
 };
 
@@ -25,7 +25,7 @@ const sumArrays = arrs => {
 const arrShift = arr => {
   if (arr === undefined) throw new Error("arr is required");
   if (arr.length < 2) return arr;
-  var firstElement = arr.shift();
+  let firstElement = arr.shift();
   arr.unshift(arr.pop());
   arr.push(firstElement);
   return arr;
@@ -34,7 +34,7 @@ const arrShift = arr => {
 const findNeedle = (haystack, searchTerm) => {
   if (haystack === undefined) throw new Error("haystack is required");
   if (searchTerm === undefined) throw new Error("searchTerm is required");
-  var hasFound = false;
+  let hasFound = false;
   Object.values(haystack).some(function(value){
     if (value.toString().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) {
       hasFound = true;
@@ -46,11 +46,11 @@ const findNeedle = (haystack, searchTerm) => {
 
 const getWordFrequencies = str => {
   if (str === undefined) throw new Error("str is required");
-  var words = str.toLowerCase().replace(/[!?.,:;]/g, "").split(" ");
-  var uniqueWords = words.filter((item, index) => words.indexOf(item) === index);
-  var countObj = {};
+  const words = str.toLowerCase().replace(/[!?.,:;]/g, "").split(" ");
+  const uniqueWords = words.filter((item, index) => words.indexOf(item) === index);
+  let countObj = {};
   uniqueWords.forEach(function(uniqueWord){
-    var eachWord = words.filter((word) => word === uniqueWord);
+    const eachWord = words.filter((word) => word === uniqueWord);
     countObj[uniqueWord] = eachWord.length;
   });
   return(countObj);

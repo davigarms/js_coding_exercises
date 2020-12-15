@@ -35,7 +35,7 @@ function reverseWord(word) {
 
 function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
-  var reversedWords = [];
+  let reversedWords = [];
   words.forEach(function(word) {
     reversedWords.push(word.split("").reverse().join(""));
   });
@@ -44,7 +44,7 @@ function reverseAllWords(words) {
 
 function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
-  var linuxUsers = [];
+  let linuxUsers = [];
   users.forEach(function(user) {
     if (user.type == "Linux") linuxUsers.push(user);
   });
@@ -53,7 +53,7 @@ function countLinuxUsers(users) {
 
 function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
-  var total = 0;
+  let total = 0;
   scores.forEach(function(score){
     total += score;
   });
@@ -62,8 +62,8 @@ function getMeanScore(scores) {
 
 function simpleFizzBuzz(n) {
   if (n === undefined) throw new Error("n is required");
-  var isFizz = false;
-  var isBuzz = false;
+  let isFizz = false;
+  let isBuzz = false;
   if (n % 3 == 0) isFizz = true;
   if (n % 5 == 0) isBuzz = true; 
   if (isFizz && isBuzz) {
