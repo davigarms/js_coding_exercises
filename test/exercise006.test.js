@@ -18,6 +18,13 @@ describe("sumMultiples", () => {
 
 describe("isValidDNA", () => {
     test("it tests whether it is a valid DNA string",() => { 
-        // expect(isValidDNA("CGTA")).toBe(true);
+        expect(isValidDNA("C")).toBe(true);
+        expect(isValidDNA("G")).toBe(true);
+        expect(isValidDNA("T")).toBe(true);
+        expect(isValidDNA("A")).toBe(true);
+        expect(isValidDNA("CGTA")).toBe(true);
+        expect(isValidDNA("CGTAB")).toBe(false);
+        expect(isValidDNA("CKA")).toBe(false);
+        expect(isValidDNA("X")).toBe(false);
     })
 });
