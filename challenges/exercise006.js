@@ -29,7 +29,7 @@ const isValidDNA = str => {
 const getComplementaryDNA = str => {
   if (str === undefined) throw new Error("str is required");
   if (!isValidDNA(str)) throw new Error("invalid DNA entered");
-  
+
   const dnaArr = ["T", "A","C", "G"];
   const dnaPairArr = ["A", "T","G", "C"];
   return [...str].map(char => dnaPairArr[dnaArr.indexOf(char)]).join("");
@@ -42,6 +42,10 @@ const getComplementaryDNA = str => {
  */
 const isItPrime = n => {
   if (n === undefined) throw new Error("n is required");
+  for (let i = 2; i < n; i++) {
+    if (n%i === 0) return false;
+  }
+  return true;
 };
 
 /**
