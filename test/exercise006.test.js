@@ -28,3 +28,14 @@ describe("isValidDNA", () => {
         expect(isValidDNA("X")).toBe(false);
     })
 });
+
+describe("getComplementaryDNA", () => {
+    test("it returns a string of the complementary base pairs of a valid DNA given",() => { 
+        expect(getComplementaryDNA("T")).toBe("A");
+        expect(getComplementaryDNA("A")).toBe("T");
+        expect(getComplementaryDNA("C")).toBe("G");
+        expect(getComplementaryDNA("G")).toBe("C");
+        expect(getComplementaryDNA("TACG")).toBe("ATGC");
+        expect(getComplementaryDNA("AGCTGA")).toBe("TCGACT");
+    })
+});
