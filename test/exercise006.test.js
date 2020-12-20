@@ -42,6 +42,7 @@ describe("getComplementaryDNA", () => {
 
 describe("isItPrime", () => {
     test("check if a given number is prime",() => { 
+        expect(isItPrime(0)).toBe(false);
         expect(isItPrime(1)).toBe(true);
         expect(isItPrime(2)).toBe(true);
         expect(isItPrime(3)).toBe(true);
@@ -49,6 +50,9 @@ describe("isItPrime", () => {
         expect(isItPrime(5)).toBe(true);
         expect(isItPrime(6)).toBe(false);
         expect(isItPrime(17)).toBe(true);
+        expect(isItPrime(449)).toBe(true);
         expect(isItPrime(1245)).toBe(false);
+        expect(isItPrime(7907)).toBe(true);
+        expect(isItPrime(84921)).toBe(false);
     })
 });
