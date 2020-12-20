@@ -56,3 +56,34 @@ describe("isItPrime", () => {
         expect(isItPrime(84921)).toBe(false);
     })
 });
+
+describe("createMatrix", () => {
+    test("it receives a number and return an array of n arrays",() => { 
+        expect(createMatrix(1, "foo")).toStrictEqual(
+            [
+                ["foo"]
+            ]
+        );
+        expect(createMatrix(2, "foo")).toStrictEqual(
+            [
+                ["foo", "foo"],
+                ["foo", "foo"]
+            ]
+        );
+        expect(createMatrix(3, "foo")).toStrictEqual(
+            [
+                ["foo", "foo", "foo"],
+                ["foo", "foo", "foo"],
+                ["foo", "foo", "foo"]
+            ]
+        );
+        expect(createMatrix(4, "goku")).toStrictEqual(
+            [
+                ["goku", "goku", "goku", "goku"],
+                ["goku", "goku", "goku", "goku"],
+                ["goku", "goku", "goku", "goku"],
+                ["goku", "goku", "goku", "goku"]
+            ]
+        );
+    })
+});
