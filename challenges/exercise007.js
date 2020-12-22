@@ -72,7 +72,7 @@ const getScreentimeAlertList = (users, date) => {
  */
 const hexToRGB = hexStr => {
   if (hexStr === undefined) throw new Error("hexStr is required");
-  [,ra,rb,ga,gb,ba,bb] = [...hexStr];
+  let [,ra,rb,ga,gb,ba,bb] = [...hexStr];
   return `rgb(${parseInt(ra + rb, 16)},${parseInt(ga + gb, 16)},${parseInt(ba + bb, 16)})`;
 };
 
@@ -88,6 +88,32 @@ const hexToRGB = hexStr => {
  */
 const findWinner = board => {
   if (board === undefined) throw new Error("board is required");
+
+  // set unidimensional winning sets
+  const winningSets = [
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
+    [0,4,8],
+    [2,4,6]
+  ];
+  
+  // combine rows in an unidimensional array
+  const flatBoard = [...board[0],...board[1],...board[2]];
+
+  // map 0 and X positions found
+  const oPos = flatBoard.map((pos, i) => pos === "0" && i).filter(pos => pos !== false);
+  const xPos = flatBoard.map((pos, i) => pos === "X" && i).filter(pos => pos !== false);
+
+  // return the winner if the positions found include any winning set
+  if (winningSets.filter(set => set.every(pos => oPos.includes(pos))).length === 1) return "0";
+  if (winningSets.filter(set => set.every(pos => xPos.includes(pos))).length === 1) return "X";
+  
+  // if not return null
+  return null; 
 };
 
 module.exports = {

@@ -26,7 +26,7 @@ describe("createRange", () => {
             76, 80, 84, 88, 92, 96, 100
           ]);
         
-    })
+     })
 })
 
 describe("getScreentimeAlertList", () => {
@@ -100,5 +100,37 @@ describe("hexToRGB", () => {
         expect(hexToRGB("#FFFFFF")).toBe("rgb(255,255,255)");
         expect(hexToRGB("#000000")).toBe("rgb(0,0,0)");
         expect(hexToRGB("#5eba7d")).toBe("rgb(94,186,125)");
+    })
+})
+
+describe("findWinner", () => {
+    test("return winner",() => { 
+        expect(findWinner([
+                ["X", "0", null],
+                ["X", null, "0"],
+                ["X", null, "0"]
+            ]
+        )).toBe("X");
+
+        expect(findWinner([
+                ["X", "0", "0"],
+                [null, null, "0"],
+                ["X", null, "0"]
+            ]
+        )).toBe("0");
+
+        expect(findWinner([
+                ["X", "X", "0"],
+                [null, "0", "X"],
+                ["0", null, "0"]
+            ]
+        )).toBe("0");
+
+        expect(findWinner([
+                ["X", "0", "0"],
+                ["0", "X", "X"],
+                ["0", "X", "0"]
+            ]
+        )).toBe(null);
     })
 })
