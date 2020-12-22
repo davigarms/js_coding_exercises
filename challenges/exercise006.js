@@ -65,7 +65,7 @@ const createMatrix = (n, fill) => {
   return (new Array(n).fill(new Array(n).fill(fill)));
 };
 
-/**
+/** 
  * This function takes an array of staff objects in the format:
  * [
  *  { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
@@ -80,6 +80,7 @@ const createMatrix = (n, fill) => {
 const areWeCovered = (staff, day) => {
   if (staff === undefined) throw new Error("staff is required");
   if (day === undefined) throw new Error("day is required");
+  return(staff.filter(member => member.rota.includes(day)).length >2)
 };
 
 module.exports = {

@@ -14,7 +14,7 @@ describe("sumMultiples", () => {
         expect(sumMultiples([2,3,5,10])).toBe(18);
         expect(sumMultiples([1,4,5,9,10])).toBe(24);
     })
-});
+})
 
 describe("isValidDNA", () => {
     test("it tests whether it is a valid DNA string",() => { 
@@ -27,7 +27,7 @@ describe("isValidDNA", () => {
         expect(isValidDNA("CKA")).toBe(false);
         expect(isValidDNA("X")).toBe(false);
     })
-});
+})
 
 describe("getComplementaryDNA", () => {
     test("it returns a string of the complementary base pairs of a valid DNA given",() => { 
@@ -38,7 +38,7 @@ describe("getComplementaryDNA", () => {
         expect(getComplementaryDNA("TACG")).toBe("ATGC");
         expect(getComplementaryDNA("AGCTGA")).toBe("TCGACT");
     })
-});
+})
 
 describe("isItPrime", () => {
     test("check if a given number is prime",() => { 
@@ -55,7 +55,7 @@ describe("isItPrime", () => {
         expect(isItPrime(7907)).toBe(true);
         expect(isItPrime(84921)).toBe(false);
     })
-});
+})
 
 describe("createMatrix", () => {
     test("it receives a number and return an array of n arrays",() => { 
@@ -63,20 +63,20 @@ describe("createMatrix", () => {
             [
                 ["foo"]
             ]
-        );
+        )
         expect(createMatrix(2, "foo")).toStrictEqual(
             [
                 ["foo", "foo"],
                 ["foo", "foo"]
             ]
-        );
+        )
         expect(createMatrix(3, "foo")).toStrictEqual(
             [
                 ["foo", "foo", "foo"],
                 ["foo", "foo", "foo"],
                 ["foo", "foo", "foo"]
             ]
-        );
+        )
         expect(createMatrix(4, "goku")).toStrictEqual(
             [
                 ["goku", "goku", "goku", "goku"],
@@ -84,6 +84,31 @@ describe("createMatrix", () => {
                 ["goku", "goku", "goku", "goku"],
                 ["goku", "goku", "goku", "goku"]
             ]
-        );
+        )
     })
-});
+
+    describe("areWeCovered", () => {
+        test("check whether are enough staff scheduled for the given day",() => { 
+            expect(areWeCovered(
+                [
+                    { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
+                    { name: "Pedro", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] }
+                ], "Monday"
+            )).toBe(false);
+            expect(areWeCovered(
+                [
+                    { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
+                    { name: "Pedro", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
+                    { name: "John", rota: ["Friday", "Tuesday", "Wednesday", "Thursday"] }
+                ], "Monday"
+            )).toBe(false);
+            expect(areWeCovered(
+                [
+                    { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
+                    { name: "Pedro", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
+                    { name: "John", rota: ["Friday", "Tuesday", "Wednesday", "Thursday"] }
+                ], "Tuesday"
+            )).toBe(true);
+        })
+    })
+})
