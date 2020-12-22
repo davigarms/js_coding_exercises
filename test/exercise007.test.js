@@ -95,3 +95,10 @@ describe("getScreentimeAlertList", () => {
     })
 })
 
+describe("hexToRGB", () => {
+    test("convert hex to rgb color",() => { 
+        expect(hexToRGB("#FFFFFF")).toBe("rgb(255,255,255)");
+        expect(hexToRGB("#000000")).toBe("rgb(0,0,0)");
+        expect(hexToRGB("#5eba7d")).toBe("rgb(94,186,125)");
+    })
+})
